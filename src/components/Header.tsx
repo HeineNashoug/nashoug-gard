@@ -15,7 +15,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-ink/10 bg-cream">
       <div className="wrap flex h-16 items-center justify-between gap-3 lg:h-20 lg:gap-6">
         <Link href="/" className="flex items-center gap-3">
-          <Monogram enkel className="h-10 text-brass-dark lg:h-12" />
+          <Monogram className="h-12 text-brass-dark lg:h-16" />
           <span className="font-serif text-[1.25rem] leading-none whitespace-nowrap lg:text-[1.375rem]">{site.name}</span>
         </Link>
 
@@ -54,7 +54,7 @@ export function Header() {
         <div className="flex h-full flex-col px-5 pb-8">
           <div className="flex h-16 items-center justify-between">
             <Link href="/" onClick={close} aria-label={`${site.name}, forsiden`}>
-              <Monogram enkel className="h-10 text-brass-light" />
+              <Monogram className="h-12 text-brass-light" />
             </Link>
             <button type="button" className="label min-h-11 px-3" onClick={close}>
               Lukk
