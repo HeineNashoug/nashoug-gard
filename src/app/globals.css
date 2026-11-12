@@ -245,7 +245,7 @@
     stroke-dashoffset: 1;
     animation: draw 0.8s var(--ease-lux) forwards;
   }
-  .intro text {
+  .intro path {
     opacity: 0;
     animation: fade-in 0.5s ease 0.25s forwards;
   }

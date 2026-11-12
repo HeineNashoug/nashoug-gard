@@ -61,7 +61,8 @@ Ren hvit og ren svart brukes ikke. Ingen gradienter.
 
 ## Komponenter
 
-- **Monogram:** «NG» i Cormorant i en tynn dobbel oval. Brukes i meny,
+- **Monogram:** en N i skjønnskrift (Italianno, tegnet som kurve) i en
+  liggende dobbel oval. Brukes i meny,
   footer, intro og e-post.
 - **Ornament:** en liten potetblomst i strek, mellom to messinglinjer. Skiller
   seksjoner.
