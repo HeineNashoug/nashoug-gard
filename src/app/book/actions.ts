@@ -39,7 +39,8 @@ export async function sendForesporsel(inn: Foresporsel & { nettsted?: string; go
   const admin = (process.env.ADMIN_EMAILS ?? "").split(",").map((s) => s.trim()).filter(Boolean);
   const sendt = await Promise.allSettled([
     sendEpost({ til: [lagret.epost], svarTil: admin[0], ...bekreftelseTilKunde(lagret) }),
-    admin.length ? sendEpost({ til: admin, svarTil: lagret.epost, ...varselTilGarden(lagret) }) : null,
+    // Én e-post per mottaker, så én adresse som avvises ikke stopper varselet til de andre.
+    ...admin.map((adresse) => sendEpost({ til: [adresse], svarTil: lagret.epost, ...varselTilGarden(lagret) })),
   ]);
   for (const s of sendt) if (s.status === "rejected") console.error("E-post feilet for", lagret.referanse, s.reason);
 
