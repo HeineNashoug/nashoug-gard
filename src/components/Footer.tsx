@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="on-dark bg-forest-deep text-cream">
       <div className="wrap grid gap-12 py-16 lg:grid-cols-12 lg:py-24">
         <div className="lg:col-span-5">
-          <Monogram className="h-20 text-brass-light" />
+          <Monogram className="h-28 text-brass-light" />
           <p className="mt-6 max-w-[22ch] font-serif text-h3">
             Festlokalet Potetbua på {site.name}, like utenfor Hamar.
           </p>

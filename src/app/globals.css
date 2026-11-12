@@ -240,12 +240,14 @@
     color: var(--color-brass-dark);
     animation: intro-lift 0.7s var(--ease-lux) 0.8s forwards;
   }
-  .intro ellipse {
+  .intro ellipse:not(.perler) {
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
     animation: draw 0.8s var(--ease-lux) forwards;
   }
-  .intro path {
+  .intro .perler,
+.intro path,
+.intro circle {
     opacity: 0;
     animation: fade-in 0.5s ease 0.25s forwards;
   }

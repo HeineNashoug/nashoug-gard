@@ -69,7 +69,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="flex min-h-svh flex-col">
         <div className="intro" aria-hidden="true">
-          <Monogram className="h-28" />
+          <Monogram className="h-36" />
         </div>
         <a href="#innhold" className="btn btn-primary sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50">
           Hopp til innholdet
