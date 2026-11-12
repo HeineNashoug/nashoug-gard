@@ -1,0 +1,546 @@
+@import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+/* Verdiene her følger DESIGN.md. Bruk navnene, ikke råverdier. */
+@theme {
+  --color-*: initial;
+  --color-cream: #f5efe4;
+  --color-parchment: #eae1cf;
+  --color-paper: #faf6ee;
+  --color-ink: #1e1b16;
+  --color-stone: #5a5347;
+  --color-forest: #1f3a2d;
+  --color-forest-deep: #14261d;
+  --color-brass: #b8975a;
+  --color-brass-dark: #7b6029;
+  --color-brass-light: #c9ad78;
+  --color-barn: #7a2e2a;
+
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-hanken), system-ui, sans-serif;
+
+  --text-display: clamp(2.75rem, 8vw, 6.5rem);
+  --text-display--line-height: 0.98;
+  --text-h1: clamp(2.5rem, 6vw, 4.5rem);
+  --text-h1--line-height: 1.05;
+  --text-h2: clamp(2rem, 4.5vw, 3.25rem);
+  --text-h2--line-height: 1.1;
+  --text-h3: 1.625rem;
+  --text-h3--line-height: 1.2;
+  --text-lede: 1.5rem;
+  --text-lede--line-height: 1.4;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.65;
+  --text-small: 0.9375rem;
+  --text-small--line-height: 1.5;
+
+  --spacing-section: clamp(4.5rem, 10vw, 10rem);
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    background: var(--color-cream);
+  }
+  body {
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+  }
+  /* Papirkorn bak innholdet. Ligger aldri over bilder. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.05;
+    pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brass-dark);
+    outline-offset: 3px;
+  }
+  .on-dark :focus-visible {
+    outline-color: var(--color-brass-light);
+  }
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+}
+
+@utility wrap {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: 20px;
+  @media (width >= 64rem) {
+    padding-inline: 48px;
+  }
+}
+
+@utility label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Etikett over overskrifter: kort messingstrek + tekst */
+@utility eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-brass-dark);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  &::before {
+    content: "";
+    flex: none;
+    width: 32px;
+    height: 1px;
+    background: var(--color-brass);
+  }
+  .on-dark & {
+    color: var(--color-brass-light);
+  }
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 28px;
+    border: 1px solid var(--color-forest);
+    border-radius: 2px;
+    font-size: 0.75rem;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition:
+      background-color 0.6s var(--ease-lux),
+      color 0.6s var(--ease-lux),
+      border-color 0.6s var(--ease-lux);
+  }
+  .btn-small {
+    min-height: 44px;
+    padding: 0 20px;
+  }
+  .btn-primary {
+    background: var(--color-forest);
+    color: var(--color-cream);
+  }
+  .btn-primary:hover {
+    background: var(--color-forest-deep);
+    border-color: var(--color-forest-deep);
+  }
+  .btn-secondary {
+    color: var(--color-forest);
+  }
+  .btn-secondary:hover {
+    background: var(--color-forest);
+    color: var(--color-cream);
+  }
+  .btn-light {
+    background: var(--color-cream);
+    border-color: var(--color-cream);
+    color: var(--color-forest);
+  }
+  .btn-light:hover {
+    background: var(--color-brass-light);
+    border-color: var(--color-brass-light);
+  }
+  .btn[aria-disabled="true"],
+  .btn:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* Messingstrek som tegnes fra venstre ved hover */
+  .link-draw {
+    position: relative;
+    display: inline-block;
+    padding-block: 6px;
+  }
+  .link-draw::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 1px;
+    background: var(--color-brass);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s var(--ease-lux);
+  }
+  .link-draw:hover::after,
+  .link-draw[aria-current="page"]::after,
+  .link-draw-on::after {
+    transform: scaleX(1);
+  }
+
+  /* Lenker i løpende tekst: alltid understreket */
+  .prose-link {
+    text-decoration: underline;
+    text-decoration-color: var(--color-brass);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.6s var(--ease-lux);
+  }
+  .prose-link:hover {
+    text-decoration-color: currentColor;
+  }
+
+  /* Overskrift som kommer inn linje for linje når siden lastes */
+  .line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.12em;
+    margin-bottom: -0.12em;
+  }
+  .line > span {
+    display: block;
+    transform: translateY(115%);
+    animation: line-up 1.1s var(--ease-lux) forwards;
+    animation-delay: calc(var(--intro-delay) + var(--i, 0) * 90ms);
+  }
+  .fade-in {
+    opacity: 0;
+    animation: fade-in 0.9s var(--ease-lux) forwards;
+    animation-delay: calc(var(--intro-delay) + var(--i, 0) * 90ms);
+  }
+  .ken-burns {
+    animation: ken-burns 12s var(--ease-lux) both;
+    animation-delay: var(--intro-delay);
+  }
+
+  /* Intro: monogrammet tegnes, så løftes flaten og siden kommer fram */
+  .intro {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    background: var(--color-cream);
+    color: var(--color-brass-dark);
+    animation: intro-lift 0.7s var(--ease-lux) 0.8s forwards;
+  }
+  .intro ellipse {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw 0.8s var(--ease-lux) forwards;
+  }
+  .intro text {
+    opacity: 0;
+    animation: fade-in 0.5s ease 0.25s forwards;
+  }
+  html[data-intro="done"] .intro {
+    display: none;
+  }
+
+  /* Mobilmeny */
+  .menu {
+    width: 100vw;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    background: var(--color-forest);
+    color: var(--color-cream);
+    opacity: 0;
+    transition:
+      opacity 0.6s var(--ease-lux),
+      overlay 0.6s allow-discrete,
+      display 0.6s allow-discrete;
+  }
+  .menu[open] {
+    opacity: 1;
+  }
+  .menu li {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .menu[open] li {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.9s var(--ease-lux),
+      transform 0.9s var(--ease-lux);
+    transition-delay: calc(0.15s + var(--i) * 60ms);
+  }
+  @starting-style {
+    .menu[open] {
+      opacity: 0;
+    }
+    .menu[open] li {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+  }
+}
+
+:root {
+  --intro-delay: 1.2s;
+}
+html[data-intro="done"] {
+  --intro-delay: 0s;
+}
+
+@keyframes line-up {
+  to {
+    transform: none;
+  }
+}
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes ken-burns {
+  from {
+    transform: scale(1.06);
+  }
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes intro-lift {
+  to {
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden;
+  }
+}
+
+/* Sidebytte: 0,4 s toning */
+::view-transition-old(*),
+::view-transition-new(*) {
+  animation-duration: 0.4s;
+  animation-timing-function: var(--ease-lux);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --intro-delay: 0s;
+  }
+  .intro {
+    display: none;
+  }
+  .line > span,
+  .ken-burns {
+    animation: none;
+    transform: none;
+  }
+  .fade-in,
+  .menu,
+  .menu li {
+    animation-duration: 0.2s;
+    transition-duration: 0.2s;
+    transition-delay: 0s;
+    transform: none;
+  }
+  .link-draw::after {
+    transition: none;
+  }
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+  }
+}
+
+/* Lysboks i galleriet: samme fullskjermsflate som mobilmenyen */
+.lysboks {
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  background: var(--color-forest-deep);
+  color: var(--color-cream);
+  opacity: 0;
+  transition:
+    opacity 0.6s var(--ease-lux),
+    overlay 0.6s allow-discrete,
+    display 0.6s allow-discrete;
+}
+.lysboks[open] {
+  opacity: 1;
+}
+@starting-style {
+  .lysboks[open] {
+    opacity: 0;
+  }
+}
+
+/* Spørsmål og svar */
+.faq summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 24px;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-serif);
+  font-size: var(--text-h3);
+  line-height: var(--text-h3--line-height);
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::after {
+  content: "+";
+  color: var(--color-brass-dark);
+}
+.faq details[open] summary::after {
+  content: "–";
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lysboks {
+    transition-duration: 0.2s;
+  }
+}
+
+/* Skjemafelt */
+.felt-navn {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-stone);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.felt-inn {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px;
+  border: 1px solid rgb(30 27 22 / 0.3);
+  border-radius: 2px;
+  background: var(--color-paper);
+  font-size: 1.0625rem;
+  transition: border-color 0.6s var(--ease-lux);
+}
+textarea.felt-inn {
+  min-height: 132px;
+  padding-block: 14px;
+}
+.felt-inn:hover,
+.felt-inn:focus-visible {
+  border-color: var(--color-forest);
+}
+.felt-inn[aria-invalid="true"] {
+  border-color: var(--color-barn);
+}
+.felt-feil {
+  margin-top: 8px;
+  color: var(--color-barn);
+  font-size: var(--text-small);
+}
+
+/* Valg (radio og avkrysning) som hele rader */
+.valg {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-height: 52px;
+  padding: 14px 16px;
+  border: 1px solid rgb(30 27 22 / 0.3);
+  border-radius: 2px;
+  background: var(--color-paper);
+  cursor: pointer;
+  transition:
+    border-color 0.6s var(--ease-lux),
+    background-color 0.6s var(--ease-lux);
+}
+.valg:hover {
+  border-color: var(--color-forest);
+}
+.valg:has(input:checked) {
+  border-color: var(--color-forest);
+  background: var(--color-parchment);
+}
+.valg:has(input:focus-visible) {
+  outline: 2px solid var(--color-brass-dark);
+  outline-offset: 3px;
+}
+.valg input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  accent-color: var(--color-forest);
+  outline: none;
+}
+
+/* Kalenderdager. Status vises med mønster og strek, ikke bare farge. */
+.dag {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  min-height: 44px;
+  border: 1px solid rgb(30 27 22 / 0.14);
+  border-radius: 2px;
+  background: var(--color-cream);
+  font-variant-numeric: tabular-nums;
+  transition:
+    background-color 0.6s var(--ease-lux),
+    border-color 0.6s var(--ease-lux),
+    color 0.6s var(--ease-lux);
+}
+@media (width >= 64rem) {
+  .dag {
+    aspect-ratio: 3 / 2;
+  }
+}
+.dag[data-status="ledig"]:hover {
+  border-color: var(--color-forest);
+}
+.dag[aria-pressed="true"],
+.dag[data-status="valgt"] {
+  border-color: var(--color-forest);
+  background: var(--color-forest);
+  color: var(--color-cream);
+}
+.dag[data-status="reservert"] {
+  border-color: var(--color-brass);
+  background: repeating-linear-gradient(135deg, transparent 0 5px, rgb(184 151 90 / 0.55) 5px 6px);
+  color: var(--color-brass-dark);
+  cursor: not-allowed;
+}
+.dag[data-status="opptatt"] {
+  border-color: transparent;
+  background: var(--color-parchment);
+  color: var(--color-stone);
+  text-decoration: line-through;
+  text-decoration-color: var(--color-barn);
+  cursor: not-allowed;
+}
+.dag[data-status="utenfor"] {
+  border-color: transparent;
+  background: none;
+  color: var(--color-stone);
+  opacity: 0.45;
+  cursor: default;
+}
