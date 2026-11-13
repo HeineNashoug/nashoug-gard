@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const fasiliteter = [
   ["Bord og stoler", "Langbord og stoler til 40."],
   ["Dekketøy", "Til alle gjestene."],
-  ["Kjøkken", "Komfyr med stekeovn, oppvaskmaskin og kaffetrakter."],
+  ["Kjøkken", "Komfyr med stekeovn, kjøleskap, fryser, oppvaskmaskin og kaffetrakter."],
   ["Bar", "Høna Bar. Drikke tar dere med selv."],
   ["Toaletter", "To."],
   ["Uteområde", "Til bruk når været holder."],
@@ -100,7 +100,7 @@ export default function Potetbua() {
               ))}
             </dl>
             <div className="mt-6">
-              <Mangler>Er det kjøleskap på kjøkkenet, og er det trinnfri adkomst?</Mangler>
+              <Mangler>Kan man komme inn i bua med rullestol eller barnevogn, uten trapp eller dørstokk?</Mangler>
             </div>
           </Reveal>
         </div>
