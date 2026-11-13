@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Bildeplass } from "@/components/Bildeplass";
 import { BookCta } from "@/components/BookCta";
-import { Mangler } from "@/components/Mangler";
 import { Ornament } from "@/components/Ornament";
 import { PageHeader } from "@/components/PageHeader";
 import { Photo } from "@/components/Photo";
@@ -51,12 +50,13 @@ export default function OmGarden() {
           <p className="mt-6 max-w-[34ch] font-serif text-lede">
             Håkon Nashoug driver gården i dag, sammen med Silja Strømme og barna Heine, Sølve og Sondre.
           </p>
-          <p className="mt-5 max-w-[52ch]">Før dem var det Vigdis og Even Nashoug som drev Nashoug.</p>
-          <div className="mt-6 max-w-[52ch]">
-            <Mangler>
-              Gårdens historie: når den ble bygget, hvor lenge familien har vært her, og hva som dyrkes i dag.
-            </Mangler>
-          </div>
+          <p className="mt-5 max-w-[52ch]">
+            Familien flyttet inn på gården i 2009. Før dem var det Vigdis og Even Nashoug som drev Nashoug.
+          </p>
+          <p className="mt-5 max-w-[52ch]">
+            På jordene rundt gården dyrkes det korn. Potetbua, som i dag er festlokale, ble bygget i 1924 og brukt til
+            å lagre poteter.
+          </p>
         </Reveal>
         <Bildeplass
           fil="familien"

@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Bildeplass } from "@/components/Bildeplass";
 import { BookCta } from "@/components/BookCta";
 import { CountUp } from "@/components/CountUp";
-import { Mangler } from "@/components/Mangler";
 import { Ornament } from "@/components/Ornament";
 import { PageHeader } from "@/components/PageHeader";
 import { Photo } from "@/components/Photo";
@@ -52,15 +51,15 @@ export default function Potetbua() {
 
       <section className="wrap grid gap-12 py-section lg:grid-cols-12 lg:gap-6">
         <Reveal className="lg:col-span-5">
-          <p className="eyebrow">Historien</p>
+          <p className="eyebrow">Bygget 1924</p>
           <h2 className="mt-5 text-h2">Historien bak bua</h2>
-          <p className="mt-6 max-w-[52ch]">
+          <p className="mt-6 max-w-[34ch] font-serif text-lede">
+            Potetbua ble bygget i 1924. Potetene fra gården ble lagret i kjelleren, og det er derfra bua har navnet sitt.
+          </p>
+          <p className="mt-5 max-w-[52ch]">
             I dag er bua innredet med gamle redskaper fra gården langs veggene, lykter under bjelkene og langbord på
             tregulvet.
           </p>
-          <div className="mt-6 max-w-[52ch]">
-            <Mangler>Når ble Potetbua bygget, hva ble den brukt til, og når ble den tatt i bruk til selskap?</Mangler>
-          </div>
         </Reveal>
         <Bildeplass
           fil="potetbua-historie"
