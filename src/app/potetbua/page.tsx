@@ -25,7 +25,7 @@ const fasiliteter = [
   ["Bar", "Høna Bar. Drikke tar dere med selv."],
   ["Toaletter", "To."],
   ["Uteområde", "Til bruk når været holder."],
-  ["Parkering", "God plass på gården."],
+  ["Parkering", "Mange parkeringsmuligheter på gården."],
   ["Adkomst", "Ingen trapper inn, men en dørstokk ved inngangen."],
   ["Lyd og lys", "Lydanlegg og festlys."],
 ];

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { BookCta } from "@/components/BookCta";
 import { Kart } from "@/components/Kart";
-import { Mangler } from "@/components/Mangler";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { site } from "@/lib/site";
@@ -20,7 +19,7 @@ const sporsmal = [
   ["Kan vi pynte selv?", "Ja, pyntingen står dere for. Når dere kan komme inn for å pynte, avtaler vi etter at dere har sendt en forespørsel."],
   ["Kan vi overnatte?", "Nei, det er ikke mulig å overnatte på gården."],
   ["Hvor lenge holdes datoen?", "Når dere sender en forespørsel, holdes datoen av i 48 timer mens vi svarer."],
-  ["Er det parkering?", "Ja, det er god plass til å parkere på gården."],
+  ["Er det parkering?", "Ja, det er mange parkeringsmuligheter på gården."],
   ["Kommer man inn med rullestol?", "Det er ingen trapper inn til bua, men det er en dørstokk ved inngangen. Ta gjerne kontakt hvis dere lurer på om det passer for gjestene deres."],
 ];
 
@@ -73,11 +72,8 @@ export default function Kontakt() {
 
           <h2 className="eyebrow mt-12">Veibeskrivelse</h2>
           <p className="mt-5 max-w-[48ch]">
-            Nashoug ligger i Ridabu, øst for Hamar sentrum. Det er god plass til å parkere på gården.
+            Nashoug ligger i Ridabu, øst for Hamar sentrum. Det er mange parkeringsmuligheter på gården.
           </p>
-          <div className="mt-5 max-w-[48ch]">
-            <Mangler>Hvor svinger man av, og hvor skal gjestene parkere?</Mangler>
-          </div>
           <a
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${site.street}, ${site.postal}`)}`}
             className="label link-draw link-draw-on mt-6"

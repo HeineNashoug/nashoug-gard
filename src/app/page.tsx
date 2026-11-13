@@ -88,7 +88,7 @@ export default function Home() {
             selskap og fest.
           </p>
           <p className="mt-5 max-w-[52ch]">
-            Bua har langbord, dekketøy og egen bar, og det er god plass til å parkere. Mat og drikke tar dere med selv.
+            Bua har langbord, dekketøy og egen bar, og det er mange parkeringsmuligheter. Mat og drikke tar dere med selv.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
             <Link href="/potetbua" className="btn btn-secondary">

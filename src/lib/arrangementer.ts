@@ -19,7 +19,7 @@ export const arrangementer = [
     navn: "Sommerfest",
     kort: "Åpne dører og uteområde når været holder.",
     tekst:
-      "Når været holder, står dørene åpne og gjestene kan trekke ut. Det er god plass til å parkere på gården.",
+      "Når været holder, står dørene åpne og gjestene kan trekke ut. Det er mange parkeringsmuligheter på gården.",
   },
   {
     slug: "bursdag",
