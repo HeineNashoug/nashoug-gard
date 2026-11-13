@@ -6,13 +6,13 @@ import { BookCta } from "@/components/BookCta";
 import { Ornament } from "@/components/Ornament";
 import { Photo } from "@/components/Photo";
 import { Reveal } from "@/components/Reveal";
+import rognebaer from "../../public/images/bord--rognebaer-i-levende-lys.jpg";
 import honaBar from "../../public/images/hona-bar.jpg";
-import koldtbord from "../../public/images/koldtbord.jpg";
-import middag from "../../public/images/middag-gjester.jpg";
-import flagg from "../../public/images/potetbua-inngang-flagg.jpg";
 import hovedhuset from "../../public/images/hovedhuset-host.jpg";
-import langbord from "../../public/images/langbord.jpg";
-import potetbua from "../../public/images/potetbua-utenfra.jpg";
+import langbordKveld from "../../public/images/langbord-kveld.jpg";
+import vedovnkroken from "../../public/images/lokalet--vedovnkroken.jpg";
+import redskapsveggen from "../../public/images/potetbua-historie.jpg";
+import potetbua from "../../public/images/uteomradet.jpg";
 
 const steg = [
   {
@@ -43,8 +43,8 @@ export default function Home() {
       <section className="lg:grid lg:min-h-[calc(100svh-5rem)] lg:grid-cols-2">
         <div className="relative h-[48svh] overflow-hidden lg:order-2 lg:h-auto">
           <Image
-            src={langbord}
-            alt="Langbord dekket til selskap i Potetbua, med tømmerbjelker i taket og grønne stoler."
+            src={langbordKveld}
+            alt="Langbordet i Potetbua om kvelden, med levende lys og blomster hele veien og lykter over bordet."
             fill
             loading="eager"
             fetchPriority="high"
@@ -109,10 +109,10 @@ export default function Home() {
           />
           <Photo
             src={potetbua}
-            alt="Potetbua sett fra hagen: rød bygning med hvit dør, mellom trær i blomst."
+            alt="Potetbua sett fra tunet, med grusvei, melkespann ved døra og lykter langs veien."
             sizes="(min-width: 1024px) 20vw, 60vw"
             ratio="4/5"
-            caption="Hovedhuset en høstdag, og Potetbua mellom trærne."
+            caption="Hovedhuset en høstdag, og Potetbua sett fra tunet."
             parallax
             className="relative z-10 -mt-6 ml-auto w-3/5 border-8 border-cream bg-cream lg:-mt-40 lg:mr-auto lg:-ml-24 lg:w-[44%]"
           />
@@ -123,7 +123,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-[1920px] lg:grid-cols-12 lg:items-center">
           <Photo
             src={honaBar}
-            alt="Høna Bar i Potetbua: bardisk av grovt treverk med levende lys, rognebær i en krukke og et treskilt i taket."
+            alt="Høna Bar med høne i keramikk, lysestake i messing og krukke med rognebær, og en gammel trillebår foran."
             sizes="(min-width: 1024px) 50vw, 100vw"
             ratio="4/5"
             className="lg:col-span-6"
@@ -136,8 +136,8 @@ export default function Home() {
               rommet.
             </p>
             <p className="mt-5 max-w-[52ch]">
-              Kjøkken, dekketøy og to toaletter er på plass, og det er uteområde og god parkering. Lydanlegg og lys tar
-              dere med selv, og pyntingen står dere for.
+              Kjøkken, dekketøy og to toaletter er på plass, og det er uteområde og god parkering. Lydanlegg og festlys
+              finnes også. Pyntingen står dere for.
             </p>
             <dl className="mt-10 flex gap-12 border-t border-ink/15 pt-8">
               <div>
@@ -181,28 +181,28 @@ export default function Home() {
               </Link>
             </Reveal>
             <Photo
-              src={koldtbord}
-              alt="Koldtbord med laks, salater og reker dekket på en gammel høvelbenk, med levende lys i messingstake."
+              src={redskapsveggen}
+              alt="Glass på brett foran veggen med gamle redskaper, kornbunter og lysestaker."
               sizes="(min-width: 1024px) 46vw, 100vw"
               ratio="3/2"
-              caption="Koldtbord dekket på høvelbenken."
+              caption="Klart til velkomstdrink foran redskapsveggen."
               parallax
             />
           </div>
           <div className="space-y-10 lg:col-span-5 lg:space-y-6">
             <Photo
-              src={middag}
-              alt="Gjester til bords ved langbordene i Potetbua, med lyslenker og lykter under tømmertaket."
+              src={rognebaer}
+              alt="Skål med rognebær og eple foran tre tente lys."
               sizes="(min-width: 1024px) 38vw, 100vw"
               ratio="4/5"
-              caption="Middag i Potetbua."
+              caption="Rognebær og levende lys på bordet."
             />
             <Photo
-              src={flagg}
-              alt="Inngangen til Potetbua en sommerdag: hvit dør i rød vegg, pyntet med bjørk og norske flagg."
+              src={vedovnkroken}
+              alt="Kroken ved vedovnen med saueskinn på benken, gamle foto og lykter."
               sizes="(min-width: 1024px) 24vw, 66vw"
               ratio="4/3"
-              caption="Inngangen pyntet med bjørk og flagg."
+              caption="Kroken ved vedovnen."
               className="ml-auto w-2/3 lg:w-3/5"
             />
           </div>

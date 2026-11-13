@@ -26,7 +26,7 @@ export const arrangementer = [
     navn: "Bursdag",
     kort: "Egen bar, og tregulv å danse på.",
     tekst:
-      "Førti til bords eller seksti stående. Baren fyller dere selv, og musikkanlegg tar dere med, så blir festen slik dere vil ha den.",
+      "Førti til bords eller seksti stående. Lydanlegg og festlys er på plass, og baren fyller dere selv.",
   },
   {
     slug: "bryllup-og-jubileum",

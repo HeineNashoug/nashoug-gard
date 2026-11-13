@@ -4,15 +4,15 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { arrangementer } from "@/lib/arrangementer";
-import cognac from "../../public/images/cognac.jpg";
-import koldtbord from "../../public/images/koldtbord.jpg";
-import langbord from "../../public/images/langbord.jpg";
-import middag from "../../public/images/middag-gjester.jpg";
-import flagg from "../../public/images/potetbua-inngang-flagg.jpg";
-import utenfra from "../../public/images/potetbua-utenfra.jpg";
+import konfirmasjon from "../../public/images/langbord.jpg";
+import julebord from "../../public/images/fest--dekket-i-lyktelys.jpg";
+import sommerfest from "../../public/images/garden-sommer.jpg";
+import bursdag from "../../public/images/lokalet--baren-med-plakater.jpg";
+import bryllup from "../../public/images/bord--glass-pa-brett-i-levende-lys.jpg";
+import firma from "../../public/images/fest--dekkede-bord-foran-skinnet.jpg";
 
 // Samme rekkefølge som i lib/arrangementer.ts
-const bilder = [flagg, middag, utenfra, cognac, langbord, koldtbord];
+const bilder = [konfirmasjon, julebord, sommerfest, bursdag, bryllup, firma];
 
 /** Nummerert liste. På desktop bytter bildet til høyre når en rad får hover eller fokus. */
 export function ArrangementListe() {

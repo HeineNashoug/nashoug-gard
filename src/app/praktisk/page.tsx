@@ -20,6 +20,7 @@ const bolker = [
       "Dekketøy til alle gjestene",
       "Kjøkken",
       "Høna Bar",
+      "Lydanlegg og festlys",
       "To toaletter",
       "Uteområde",
       "God parkering på gården",
@@ -27,7 +28,7 @@ const bolker = [
   },
   {
     tittel: "Dette tar dere med",
-    punkter: ["Mat og drikke", "Lydanlegg og lys, hvis dere vil ha det", "Pynt. Pyntingen gjør dere selv"],
+    punkter: ["Mat og drikke", "Pynt. Pyntingen gjør dere selv"],
   },
   {
     tittel: "Slik foregår leien",

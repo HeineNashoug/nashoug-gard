@@ -5,12 +5,12 @@ import { BookCta } from "@/components/BookCta";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { arrangementer } from "@/lib/arrangementer";
-import cognac from "../../../public/images/cognac.jpg";
-import koldtbord from "../../../public/images/koldtbord.jpg";
-import langbord from "../../../public/images/langbord.jpg";
-import middag from "../../../public/images/middag-gjester.jpg";
-import flagg from "../../../public/images/potetbua-inngang-flagg.jpg";
-import utenfra from "../../../public/images/potetbua-utenfra.jpg";
+import konfirmasjon from "../../../public/images/langbord.jpg";
+import julebord from "../../../public/images/fest--dekket-i-lyktelys.jpg";
+import sommerfest from "../../../public/images/garden-sommer.jpg";
+import bursdag from "../../../public/images/lokalet--baren-med-plakater.jpg";
+import bryllup from "../../../public/images/bord--glass-pa-brett-i-levende-lys.jpg";
+import firma from "../../../public/images/fest--dekkede-bord-foran-skinnet.jpg";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/arrangementer" },
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     "Lei Potetbua på Nashoug Gård ved Hamar til konfirmasjon, julebord, sommerfest, bursdag, bryllup, jubileum eller firmaarrangement.",
 };
 
-// Reservebilder til egne bilder av hver arrangementstype er lagt inn. Samme rekkefølge som i lib/arrangementer.ts.
+// Bildene som vises for hver arrangementstype. En fil som heter arrangement-<type>.jpg i public/images går foran. Samme rekkefølge som i lib/arrangementer.ts.
 const reserver = [
-  { src: flagg, alt: "Inngangen til Potetbua, pyntet med bjørk og norske flagg." },
-  { src: middag, alt: "Gjester til bords ved langbordene i Potetbua, under lyslenker og lykter." },
-  { src: utenfra, alt: "Potetbua sett mellom trærne en forsommerdag." },
-  { src: cognac, alt: "To flasker cognac på en gammel arbeidsbenk." },
-  { src: langbord, alt: "Langbord dekket til selskap i Potetbua." },
-  { src: koldtbord, alt: "Koldtbord dekket på en gammel høvelbenk." },
+  { src: konfirmasjon, alt: "Potetbua med langbordet dekket under tømmerbjelkene, lyslenker i taket og Høna Bar til venstre." },
+  { src: julebord, alt: "Dekkede bord i lyktelys, sett innover i Potetbua." },
+  { src: sommerfest, alt: "Potetbua en sommerkveld i solnedgang, med flagg ved døra og lys i lyktene." },
+  { src: bursdag, alt: "Bardisken i Høna Bar med gamle plakater, traktorseter som barkrakker og flasker på hylla." },
+  { src: bryllup, alt: "Glass på brett med blondeserviett, foran levende lys." },
+  { src: firma, alt: "Dekkede bord foran et stort skinn på veggen, med lykter i taket." },
 ];
 
 export default function Arrangementer() {

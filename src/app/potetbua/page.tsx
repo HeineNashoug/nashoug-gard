@@ -26,7 +26,7 @@ const fasiliteter = [
   ["Toaletter", "To."],
   ["Uteområde", "Til bruk når været holder."],
   ["Parkering", "God plass på gården."],
-  ["Lyd og lys", "Finnes ikke i bua. Ta med eget anlegg."],
+  ["Lyd og lys", "Lydanlegg og festlys."],
 ];
 
 export default function Potetbua() {
@@ -41,7 +41,7 @@ export default function Potetbua() {
       <div className="wrap">
         <Photo
           src={langbord}
-          alt="Langbord dekket til selskap i Potetbua, med tømmerbjelker i taket og grønne stoler."
+          alt="Potetbua med langbordet dekket under tømmerbjelkene, lyslenker i taket og Høna Bar til venstre."
           sizes="(min-width: 1320px) 1224px, 100vw"
           ratio="3/2"
           caption="Langbordet dekket til førti."
@@ -127,7 +127,7 @@ export default function Potetbua() {
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-6">
           <Photo
             src={honaBar}
-            alt="Høna Bar i Potetbua: bardisk av grovt treverk med levende lys og treskilt i taket."
+            alt="Høna Bar med høne i keramikk, lysestake i messing og krukke med rognebær, og en gammel trillebår foran."
             sizes="(min-width: 1024px) 38vw, 100vw"
             ratio="4/5"
             caption="Høna Bar."

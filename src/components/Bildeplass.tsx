@@ -1,5 +1,5 @@
 import type { StaticImageData } from "next/image";
-import { finnBilde } from "@/lib/bilder";
+import { finnBilde, kjentAlt } from "@/lib/bilder";
 import { Photo } from "./Photo";
 
 /**
@@ -26,7 +26,7 @@ export function Bildeplass({
   className?: string;
 }) {
   const egen = finnBilde(fil);
-  if (egen) return <Photo src={egen} alt={motiv} {...{ ratio, sizes, caption, parallax, className }} />;
+  if (egen) return <Photo src={egen} alt={kjentAlt(fil) ?? motiv} {...{ ratio, sizes, caption, parallax, className }} />;
   if (reserve) return <Photo src={reserve.src} alt={reserve.alt} {...{ ratio, sizes, caption, parallax, className }} />;
 
   return (
