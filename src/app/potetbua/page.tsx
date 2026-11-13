@@ -106,21 +106,6 @@ export default function Potetbua() {
         </div>
       </section>
 
-      <section className="wrap grid gap-12 py-section lg:grid-cols-12 lg:gap-6">
-        <Reveal className="lg:col-span-4">
-          <p className="eyebrow">Plantegning</p>
-          <h2 className="mt-5 text-h2">Slik er rommet lagt opp</h2>
-          <p className="mt-6 max-w-[40ch]">Tegningen viser hvor bordene, baren, kjøkkenet og toalettene ligger.</p>
-        </Reveal>
-        <Bildeplass
-          fil="plantegning"
-          motiv="Plantegning av Potetbua med mål, bord, bar, kjøkken og toaletter"
-          sizes="(min-width: 1024px) 58vw, 100vw"
-          ratio="3/2"
-          className="lg:col-span-7 lg:col-start-6"
-        />
-      </section>
-
       <Ornament />
 
       <section className="wrap py-section">

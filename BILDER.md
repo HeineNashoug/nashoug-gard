@@ -20,7 +20,6 @@ plass, viser siden en plassholder eller et reservebilde.
 | Filnavn | Side | Motiv | Format | Vises nå |
 |---|---|---|---|---|
 | `potetbua-historie` | Potetbua | Bua i gamle dager, eller redskapene på veggen | liggende 4:3 | plassholder |
-| `plantegning` | Potetbua | Plantegning med mål, bord, bar, kjøkken, toaletter | liggende 3:2 | plassholder |
 | `kjokken` | Potetbua | Kjøkkenet, med benk og utstyr | liggende 3:2 | plassholder |
 | `uteomradet` | Potetbua | Uteområdet en sommerkveld | liggende 4:3 | plassholder |
 | `familien` | Om gården | Familien på gården | liggende 4:3 | plassholder |
