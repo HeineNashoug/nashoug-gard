@@ -21,6 +21,7 @@ const sporsmal = [
   ["Kan vi overnatte?", "Nei, det er ikke mulig å overnatte på gården."],
   ["Hvor lenge holdes datoen?", "Når dere sender en forespørsel, holdes datoen av i 48 timer mens vi svarer."],
   ["Er det parkering?", "Ja, det er god plass til å parkere på gården."],
+  ["Kommer man inn med rullestol?", "Det er ingen trapper inn til bua, men det er en dørstokk ved inngangen. Ta gjerne kontakt hvis dere lurer på om det passer for gjestene deres."],
 ];
 
 const faqSchema = {

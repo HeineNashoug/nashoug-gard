@@ -26,6 +26,7 @@ const fasiliteter = [
   ["Toaletter", "To."],
   ["Uteområde", "Til bruk når været holder."],
   ["Parkering", "God plass på gården."],
+  ["Adkomst", "Ingen trapper inn, men en dørstokk ved inngangen."],
   ["Lyd og lys", "Lydanlegg og festlys."],
 ];
 
@@ -99,9 +100,6 @@ export default function Potetbua() {
                 </div>
               ))}
             </dl>
-            <div className="mt-6">
-              <Mangler>Kan man komme inn i bua med rullestol eller barnevogn, uten trapp eller dørstokk?</Mangler>
-            </div>
           </Reveal>
         </div>
       </section>
