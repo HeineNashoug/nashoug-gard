@@ -35,6 +35,7 @@ const kjente: Record<string, { kategori: string; alt: string }> = {
   "lokalet--seletoy-og-slipestein": { kategori: "lokalet", alt: "Gammelt seletøy, slipestein og hestesko i en krok av Potetbua." },
   "lokalet--vedovnen-og-langbordet": { kategori: "lokalet", alt: "Vedovn og benk med saueskinn og røde puter, med et dekket bord foran." },
   "lokalet--hona-bar-skiltet": { kategori: "lokalet", alt: "Skiltet over Høna Bar, med høne i keramikk, krukke med rognebær og tente lys." },
+  "lokalet--hona-bar-en-kveld": { kategori: "lokalet", alt: "Høna Bar en kveld, med bartender bak disken, rognebær i krukke og tent lys." },
   "lokalet--hona-ved-baren": { kategori: "lokalet", alt: "Høne i keramikk og lys i glass på bardisken." },
   "lokalet--baren-med-plakater": { kategori: "lokalet", alt: "Bardisken i Høna Bar med gamle plakater, traktorseter som barkrakker og flasker på hylla." },
   "lokalet--vedovnkroken": { kategori: "lokalet", alt: "Kroken ved vedovnen med saueskinn på benken, gamle foto og lykter." },
