@@ -6,7 +6,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { arrangementer } from "@/lib/arrangementer";
 import konfirmasjon from "../../../public/images/langbord.jpg";
-import julebord from "../../../public/images/fest--dekket-i-lyktelys.jpg";
+import julebord from "../../../public/images/julebord--langbordet-dekket-til-jul.jpg";
 import sommerfest from "../../../public/images/garden-sommer.jpg";
 import bursdag from "../../../public/images/lokalet--baren-med-plakater.jpg";
 import bryllup from "../../../public/images/bord--glass-pa-brett-i-levende-lys.jpg";
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 // Bildene som vises for hver arrangementstype. En fil som heter arrangement-<type>.jpg i public/images går foran. Samme rekkefølge som i lib/arrangementer.ts.
 const reserver = [
   { src: konfirmasjon, alt: "Potetbua med langbordet dekket under tømmerbjelkene, lyslenker i taket og Høna Bar til venstre." },
-  { src: julebord, alt: "Dekkede bord i lyktelys, sett innover i Potetbua." },
+  { src: julebord, alt: "Langbordet i Potetbua dekket til julebord, med røde julekuler og lys." },
   { src: sommerfest, alt: "Potetbua en sommerkveld i solnedgang, med flagg ved døra og lys i lyktene." },
   { src: bursdag, alt: "Bardisken i Høna Bar med gamle plakater, traktorseter som barkrakker og flasker på hylla." },
   { src: bryllup, alt: "Glass på brett med blondeserviett, foran levende lys." },

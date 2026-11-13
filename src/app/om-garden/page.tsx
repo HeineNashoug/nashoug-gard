@@ -8,7 +8,6 @@ import { Photo } from "@/components/Photo";
 import { Reveal } from "@/components/Reveal";
 import hovedhuset from "../../../public/images/hovedhuset-host.jpg";
 import flagg from "../../../public/images/potetbua-inngang-flagg.jpg";
-import utenfra from "../../../public/images/potetbua-utenfra.jpg";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/om-garden" },
@@ -18,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const aaret = [
-  { fil: "garden-var", navn: "Vår", motiv: "Gården om våren", reserve: { src: utenfra, alt: "Potetbua sett mellom trær i blomst." } },
+  { fil: "garden-var", navn: "Vår", motiv: "Gården om våren" },
   { fil: "garden-sommer", navn: "Sommer", motiv: "Gården om sommeren", reserve: { src: flagg, alt: "Inngangen til Potetbua, pyntet med bjørk og flagg." } },
   { fil: "garden-host", navn: "Høst", motiv: "Innhøsting eller høstfarger på jordene" },
   { fil: "garden-vinter", navn: "Vinter", motiv: "Gården i snø, gjerne med lys i vinduene" },
@@ -36,7 +35,7 @@ export default function OmGarden() {
       <div className="wrap">
         <Photo
           src={hovedhuset}
-          alt="Det hvite hovedhuset på Nashoug Gård en høstdag, med gult løv på trærne og på plenen."
+          alt="Det hvite hovedhuset på Nashoug Gård i høstsol, med gult løv på trærne og plenen."
           sizes="(min-width: 1320px) 1024px, 100vw"
           ratio="16/9"
           caption="Hovedhuset på Nashoug."

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const fasiliteter = [
   ["Bord og stoler", "Langbord og stoler til 40."],
   ["Dekketøy", "Til alle gjestene."],
-  ["Kjøkken", "Eget kjøkken i bua."],
+  ["Kjøkken", "Komfyr med stekeovn, oppvaskmaskin og kaffetrakter."],
   ["Bar", "Høna Bar. Drikke tar dere med selv."],
   ["Toaletter", "To."],
   ["Uteområde", "Til bruk når været holder."],
@@ -100,7 +100,7 @@ export default function Potetbua() {
               ))}
             </dl>
             <div className="mt-6">
-              <Mangler>Hva finnes på kjøkkenet (komfyr, kjøleskap, oppvaskmaskin), og er det trinnfri adkomst?</Mangler>
+              <Mangler>Er det kjøleskap på kjøkkenet, og er det trinnfri adkomst?</Mangler>
             </div>
           </Reveal>
         </div>
@@ -124,7 +124,7 @@ export default function Potetbua() {
               motiv="Kjøkkenet, med benk og utstyr"
               sizes="(min-width: 1024px) 46vw, 100vw"
               ratio="3/2"
-              caption="Kjøkkenet."
+              caption="Kjøkkenet, med oppvaskmaskin og kaffetrakter."
             />
             <Bildeplass
               fil="uteomradet"

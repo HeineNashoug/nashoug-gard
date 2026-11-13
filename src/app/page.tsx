@@ -103,7 +103,7 @@ export default function Home() {
         <div className="lg:col-span-6 lg:col-start-7">
           <Photo
             src={hovedhuset}
-            alt="Det hvite hovedhuset på Nashoug Gård en høstdag, med gult løv på trærne og på plenen."
+            alt="Det hvite hovedhuset på Nashoug Gård i høstsol, med gult løv på trærne og plenen."
             sizes="(min-width: 1024px) 46vw, 100vw"
             ratio="4/3"
           />

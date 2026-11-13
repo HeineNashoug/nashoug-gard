@@ -12,6 +12,7 @@ const BILDEFIL = /\.(jpe?g|png|webp|avif)$/i;
 
 export const kategorier: Record<string, string> = {
   lokalet: "Lokalet",
+  kjokken: "Kjøkken og dekketøy",
   garden: "Gården",
   bord: "Mat og bord",
   fest: "Fest",
@@ -55,7 +56,6 @@ const kjente: Record<string, { kategori: string; alt: string }> = {
   "fest--dekket-i-lyktelys": { kategori: "fest", alt: "Dekkede bord i lyktelys, sett innover i Potetbua." },
   "fest--lyd-og-lys": { kategori: "fest", alt: "Høyttaler med lysbriller og glowsticks." },
   // Gården
-  "hovedhuset-host": { kategori: "garden", alt: "Det hvite hovedhuset på Nashoug Gård en høstdag, med gult løv på trærne." },
   "potetbua-utenfra": { kategori: "garden", alt: "Potetbua sett mellom trærne: rød bygning med hvit dør." },
   "potetbua-inngang-flagg": { kategori: "garden", alt: "Inngangen til Potetbua, pyntet med bjørk og norske flagg." },
   uteomradet: { kategori: "garden", alt: "Potetbua sett fra tunet, med grusvei, melkespann ved døra og lykter langs veien." },
@@ -63,7 +63,30 @@ const kjente: Record<string, { kategori: string; alt: string }> = {
   "garden-sommer": { kategori: "garden", alt: "Potetbua en sommerkveld i solnedgang, med flagg ved døra og lys i lyktene." },
   "garden--potetbua-en-kveld": { kategori: "garden", alt: "Potetbua om kvelden, med lys i døra og sykler på tunet." },
   "garden--katten-pa-benken": { kategori: "garden", alt: "Gårdskatten, en svart katt, på saueskinn i benken." },
+  "hovedhuset-host": { kategori: "garden", alt: "Det hvite hovedhuset på Nashoug Gård i høstsol, med gult løv på trærne og plenen." },
+  "garden-var": { kategori: "garden", alt: "Potetbua om våren, med gule blomster i forgrunnen og grusveien opp til døra." },
+  "garden-vinter": { kategori: "garden", alt: "Potetbua i rimfrost, med snødekte trær og blå himmel." },
+  "garden--rimfrost-ved-hovedhuset": { kategori: "garden", alt: "Tunet ved hovedhuset i rimfrost og lav vintersol." },
+  "garden--flagget-pa-tunet": { kategori: "garden", alt: "Flaggstanga på tunet med flagget heist mot blå himmel." },
+  "garden--utsikten-mot-mjosa": { kategori: "garden", alt: "Utsikten fra gården over grønne jorder mot Mjøsa, med flaggstanga i forgrunnen." },
+  "garden--skiloype-over-jordene": { kategori: "garden", alt: "Skiløype over snødekte jorder i lav vintersol." },
+  "garden--veteranbil-under-treet": { kategori: "garden", alt: "Svart veteranbil på grusveien under det store treet på tunet." },
+  // Kjøkken og dekketøy
+  kjokken: { kategori: "kjokken", alt: "Kjøkkenet i Potetbua, med komfyr og stekeovn, oppvaskmaskin, kaffetrakter og stor oppvaskkum." },
+  "kjokken--glass-og-tallerkener": { kategori: "kjokken", alt: "Skap med vinglass, vannglass og tallerkener." },
+  "kjokken--tallerkener": { kategori: "kjokken", alt: "Stabler med hvite tallerkener og dype tallerkener." },
+  "kjokken--kopper-og-asjetter": { kategori: "kjokken", alt: "Hvite kopper, skåler og asjetter i skapet." },
+  "kjokken--glassflasker-pa-hylla": { kategori: "kjokken", alt: "Glassflasker med patentkork på en hylle i kjøkkenet." },
+  // Julebord
+  "julebord--langbordet-dekket-til-jul": { kategori: "julebord", alt: "Langbordet i Potetbua dekket til julebord, med røde julekuler og lys." },
+  "julebord--hovedhuset-i-julelys": { kategori: "julebord", alt: "Hovedhuset i blåtimen, med julelys på verandaen og i trærne." },
+  "julebord--potetbua-en-forjulskveld": { kategori: "julebord", alt: "Potetbua en førjulskveld, med fakler langs veien og granbar ved døra." },
+  // Vises ikke i galleriet
+  familien: { kategori: "skjult", alt: "Familien på Nashoug på tur på fjellet: Håkon, Silja og de tre barna." },
 };
+
+// Bilder som har en fast plass, men som ikke skal i galleriet.
+const ikkeIGalleri = new Set(["familien"]);
 
 /** Beskrivelsen av et kjent bilde, til alt-tekst. */
 export const kjentAlt = (navn: string) => kjente[navn]?.alt;
@@ -85,7 +108,7 @@ export type GalleriBilde = {
 };
 
 // Rekkefølgen i galleriet: lokalet først, gården sist.
-const orden = ["lokalet", "fest", "bord", "konfirmasjon", "julebord", "sommerfest", "bursdag", "bryllup", "firma", "garden"];
+const orden = ["lokalet", "fest", "bord", "kjokken", "konfirmasjon", "julebord", "sommerfest", "bursdag", "bryllup", "firma", "garden"];
 
 export function galleriBilder(): GalleriBilde[] {
   return lesBilder().sort((a, b) => orden.indexOf(a.kategori ?? "") - orden.indexOf(b.kategori ?? ""));
@@ -94,7 +117,7 @@ export function galleriBilder(): GalleriBilde[] {
 function lesBilder(): GalleriBilde[] {
   const filer = fs
     .readdirSync(MAPPE)
-    .filter((f) => BILDEFIL.test(f))
+    .filter((f) => BILDEFIL.test(f) && !ikkeIGalleri.has(f.replace(BILDEFIL, "")))
     .sort();
   return filer.map((fil) => {
     const navn = fil.replace(BILDEFIL, "");

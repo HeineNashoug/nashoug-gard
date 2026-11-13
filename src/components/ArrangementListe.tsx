@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { arrangementer } from "@/lib/arrangementer";
 import konfirmasjon from "../../public/images/langbord.jpg";
-import julebord from "../../public/images/fest--dekket-i-lyktelys.jpg";
+import julebord from "../../public/images/julebord--langbordet-dekket-til-jul.jpg";
 import sommerfest from "../../public/images/garden-sommer.jpg";
 import bursdag from "../../public/images/lokalet--baren-med-plakater.jpg";
 import bryllup from "../../public/images/bord--glass-pa-brett-i-levende-lys.jpg";
