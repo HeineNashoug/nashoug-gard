@@ -17,7 +17,7 @@ const sporsmal = [
   ["Hvor mange er det plass til?", "40 til bords, eller 60 stående."],
   ["Kan vi ta med egen mat og drikke?", "Ja. Mat og drikke ordner dere selv. Det er kjøkken, dekketøy og bar i bua."],
   ["Finnes det lydanlegg?", "Ja, det er lydanlegg og lys i bua."],
-  ["Kan vi pynte selv?", "Ja. Pyntingen står dere for."],
+  ["Kan vi pynte selv?", "Ja, pyntingen står dere for. Når dere kan komme inn for å pynte, avtaler vi etter at dere har sendt en forespørsel."],
   ["Kan vi overnatte?", "Nei, det er ikke mulig å overnatte på gården."],
   ["Hvor lenge holdes datoen?", "Når dere sender en forespørsel, holdes datoen av i 48 timer mens vi svarer."],
   ["Er det parkering?", "Ja, det er god plass til å parkere på gården."],

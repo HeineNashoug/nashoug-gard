@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BookCta } from "@/components/BookCta";
-import { Mangler } from "@/components/Mangler";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 
@@ -37,6 +36,7 @@ const bolker = [
       "Datoen holdes av i 48 timer",
       "Vi tar kontakt med bekreftelse og et prisforslag",
       "Leien betales per arrangement",
+      "Når dere kan komme inn for å pynte, når lokalet må være ryddet, og hvem som tar vasken, avtaler vi med dere",
     ],
   },
   {
@@ -68,11 +68,6 @@ export default function Praktisk() {
             </ul>
           </Reveal>
         ))}
-        <div className="max-w-[60ch]">
-          <Mangler>
-            Når kan leietaker komme inn for å pynte, når må lokalet være ryddet, og hvem står for vasken etterpå?
-          </Mangler>
-        </div>
         <p className="mt-10">
           Lurer du på noe annet? Se{" "}
           <Link href="/kontakt#sporsmal" className="prose-link">
